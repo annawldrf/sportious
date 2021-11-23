@@ -10,10 +10,95 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_151039) do
+ActiveRecord::Schema.define(version: 2021_11_23_114435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admin_requests", force: :cascade do |t|
+    t.string "message"
+    t.string "action"
+    t.bigint "court_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["court_id"], name: "index_admin_requests_on_court_id"
+    t.index ["user_id"], name: "index_admin_requests_on_user_id"
+  end
+
+  create_table "check_ins", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.bigint "user_id", null: false
+    t.bigint "court_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["court_id"], name: "index_check_ins_on_court_id"
+    t.index ["user_id"], name: "index_check_ins_on_user_id"
+  end
+
+  create_table "court_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "courts", force: :cascade do |t|
+    t.string "description"
+    t.string "address"
+    t.float "longitude"
+    t.float "latitude"
+    t.bigint "court_type_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["court_type_id"], name: "index_courts_on_court_type_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "description"
+    t.string "title"
+    t.integer "capacity"
+    t.float "price"
+    t.bigint "user_id", null: false
+    t.bigint "court_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["court_id"], name: "index_lessons_on_court_id"
+    t.index ["user_id"], name: "index_lessons_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.bigint "court_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["court_id"], name: "index_messages_on_court_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "lesson_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_reservations_on_lesson_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.bigint "court_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["court_id"], name: "index_reviews_on_court_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +108,23 @@ ActiveRecord::Schema.define(version: 2021_11_22_151039) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "admin_requests", "courts"
+  add_foreign_key "admin_requests", "users"
+  add_foreign_key "check_ins", "courts"
+  add_foreign_key "check_ins", "users"
+  add_foreign_key "courts", "court_types"
+  add_foreign_key "lessons", "courts"
+  add_foreign_key "lessons", "users"
+  add_foreign_key "messages", "courts"
+  add_foreign_key "messages", "users"
+  add_foreign_key "reservations", "lessons"
+  add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "courts"
+  add_foreign_key "reviews", "users"
 end
