@@ -10,4 +10,8 @@ class User < ApplicationRecord
   has_many :reservations
   has_many :admin_requests
   has_many :courts
+
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  validates :password, presence: true
 end

@@ -6,4 +6,6 @@ class Court < ApplicationRecord
   has_many :lessons
   belongs_to :court_type
   belongs_to :user
+
+  validates :address, presence: true
 end
