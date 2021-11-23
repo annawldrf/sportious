@@ -8,5 +8,6 @@ class User < ApplicationRecord
   has_many :messages
   has_many :lessons
   has_many :reservations
-  has_many :courts, through: :admin_requests
+  has_many :admin_requests
+  has_many :courts
 end
