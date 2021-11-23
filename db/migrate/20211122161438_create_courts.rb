@@ -4,8 +4,7 @@ class CreateCourts < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :address
       t.float :longitude
-      t.string :latitude
-      t.string :float
+      t.float :latitude
       t.references :court_type, null: false, foreign_key: true
 
       t.timestamps
