@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'uri'
 
 Court.destroy_all
 User.destroy_all
@@ -24,15 +25,31 @@ basketball_addresses = [
   "Kazmairstraße 89, München"
 ]
 basketball_courts = []
+basketball_courts_images = [
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685195/sportious/courts/basketball/Belgradstra%C3%9Fe-195_phlvj8.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685226/sportious/courts/basketball/Demleitnerstra%C3%9Fe-4_xvan0d.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685240/sportious/courts/basketball/Mankeiweg_ziajnd.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685203/sportious/courts/basketball/Ma%C3%9Fmann-Park_ldpygx.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685210/sportious/courts/basketball/Westpark_qpp7qs.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685214/sportious/courts/basketball/Max-Planck-Stra%C3%9Fe_jn2c5k.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685222/sportious/courts/basketball/Matthias-Pschorr-Stra%C3%9Fe_4_a99uee.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685197/sportious/courts/basketball/Barer-Stra%C3%9Fe-29_n0zla4.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685200/sportious/courts/basketball/Ganghoferstra%C3%9Fe-55_rc93ze.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685212/sportious/courts/basketball/Kazmairstra%C3%9Fe-89_urnauy.jpg"
+]
 
-basketball_addresses.each do |address|
+basketball_addresses.each_with_index do |address, index|
   court = Court.new(
     address: address,
     court_type: "basketball"
   )
+  url = basketball_courts_images[index]
+  file = URI.open(url)
+  court.photo.attach(io: file, filename: 'court.png', content_type: 'image/png')
   court.save!
   basketball_courts << court
 end
+
 
 beach_volleyball_addresses = [
   "Am Eventpark 20, Aschheim",
@@ -70,12 +87,27 @@ pingpong_addresses = [
   "Plinganserstraße 58, München"
 ]
 pingpong_courts = []
+pingpong_courts_images = [
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685709/sportious/courts/pingpong/Marlene-Dietrich-Stra%C3%9Fe-5_nxxxnq.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685709/sportious/courts/pingpong/Wilderich-Lang-Stra%C3%9Fe-10_akgxdm.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685704/sportious/courts/pingpong/He%C3%9Fstra%C3%9Fe-77_pfcyzj.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685705/sportious/courts/pingpong/Friedrichstra%C3%9Fe-15_wnwjq8.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685708/sportious/courts/pingpong/Dietramszeller-Str.-9_yveboq.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685706/sportious/courts/pingpong/Marbachstra%C3%9Fe-4_up5jd5.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685709/sportious/courts/pingpong/Bo%CC%88hmerwaldpl.-11_d7mehn.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685708/sportious/courts/pingpong/Salzsenderweg_ils7le.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685708/sportious/courts/pingpong/Denninger-Stra%C3%9Fe-39_hprjuk.jpg",
+  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685711/sportious/courts/pingpong/Plinganserstra%C3%9Fe-58_tsdze4.jpg"
+]
 
-pingpong_addresses.each do |address|
+pingpong_addresses.each_with_index do |address, index|
   court = Court.new(
     address: address,
     court_type: "ping pong"
   )
+  url = pingpong_courts_images[index]
+  file = URI.open(url)
+  court.photo.attach(io: file, filename: 'court.png', content_type: 'image/png')
   court.save!
   pingpong_courts << court
 end
