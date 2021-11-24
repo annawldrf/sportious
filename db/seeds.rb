@@ -9,8 +9,34 @@
 require 'faker'
 require 'uri'
 
+
 Court.destroy_all
 User.destroy_all
+
+users = []
+user_admin = User.new(
+  username: "marcel",
+  email: "marcel@fonseca.com",
+  password: "123456",
+  admin: true
+)
+user_admin.save!
+users << user_admin
+
+10.times do
+  user = User.new(
+    username: Faker::Internet.username,
+    email: Faker::Internet.email,
+    password: "123456"
+  )
+  user.save!
+  users << user
+end
+
+
+CourtType.create(name: "basketball")
+CourtType.create(name: "ping pong")
+CourtType.create(name: "volleyball")
 
 basketball_addresses = [
   "Belgradstraße 195, München",
@@ -41,7 +67,8 @@ basketball_courts_images = [
 basketball_addresses.each_with_index do |address, index|
   court = Court.new(
     address: address,
-    court_type: "basketball"
+    court_type: CourtType.first,
+    user: users.sample
   )
   url = basketball_courts_images[index]
   file = URI.open(url)
@@ -68,7 +95,8 @@ beach_volleyball_courts = []
 beach_volleyball_addresses.each do |address|
   court = Court.new(
     address: address,
-    court_type: "beach_volleyball"
+    court_type: CourtType.third,
+    user: users.sample
   )
   court.save!
   beach_volleyball_courts << court
@@ -103,31 +131,12 @@ pingpong_courts_images = [
 pingpong_addresses.each_with_index do |address, index|
   court = Court.new(
     address: address,
-    court_type: "ping pong"
+    court_type: CourtType.second,
+    user: users.sample
   )
   url = pingpong_courts_images[index]
   file = URI.open(url)
   court.photo.attach(io: file, filename: 'court.png', content_type: 'image/png')
   court.save!
   pingpong_courts << court
-end
-
-users = []
-user_admin = User.new(
-  username: "marcel",
-  email: "marcel@fonseca.com",
-  password: "123456",
-  admin: true
-)
-user_admin.save!
-users << user_admin
-
-10.times do
-  user = User.new(
-    username: Faker::Internet.username,
-    email: Faker::Internet.email,
-    password: Faker::Internet.password
-  )
-  user.save!
-  users << user
 end

@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="top-part" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @court.photo.attached? ? cl_image_path(@court.photo.key) : asset_path('/generic_image.jpeg')%>);">">
+    <h1><%= @court.address %></h1>
+  </div>
+  <div>
+    <p><%= @court.description %></p>
+    <button>Check-In</button>
+  </div>
+</div>
