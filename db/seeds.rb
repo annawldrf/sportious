@@ -9,7 +9,6 @@
 require 'faker'
 require 'uri'
 
-
 Court.destroy_all
 User.destroy_all
 
