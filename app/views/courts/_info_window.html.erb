@@ -1,2 +1,9 @@
-<h2><%= court.court_type %></h2>
-<p><%= court.address %></p>
+<p>Court type: <%= court.court_type.name.capitalize %></p>
+<p>Address: <%= court.address %></p>
+<div class="card">
+  <% if court.photo.attached? %>
+    <%= cl_image_tag court.photo.key, crop: :fill %>
+  <% else %>
+    <% asset_path('/generic_image.jpeg') %>
+  <% end %>
+</div>
