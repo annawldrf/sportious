@@ -5,10 +5,10 @@ class CourtsController < ApplicationController
     @courts = Court.all
     @markers = @courts.geocoded.map do |court|
       {
-        lat: court.latitude,
-        lng: court.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { court: court }),
-        image_url: helpers.asset_url("basketball.png"),
+      lat: court.latitude,
+      lng: court.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { court: court }),
+      image_url: helpers.asset_url("#{court.court_type.name}.png"),
       }
     end
   end
