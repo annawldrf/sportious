@@ -11,7 +11,23 @@
       <h3>About the Court</h3>
       <p><%= @court.description %></p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, itaque, error ratione reiciendis sapiente delectus veniam quisquam voluptates cupiditate sunt deserunt dolorem distinctio quidem accusamus inventore dignissimos, obcaecati nulla magni!</p>
-    </div>
-      <button class="btn btn-success check-in">Check-In</button>
+  <div class="checkin">
+    <% if @latest_checkin.nil? %>
+      <%= form_tag court_check_ins_path(@court), method: :post do %>
+        <div class="card">
+            <label for="from">Starting Time</p>
+            <%= time_field_tag :start_time, params[:start_time], class: "form-group", placeholder: "From" %>
+        </div>
+        <div class="card">
+          <label for="until">End Time</p>
+          <%= time_field_tag :end_time, params[:end_time], class: "form-group", placeholder: "Until" %>
+        </div>
+        <div class="search-button">
+          <%= submit_tag "Check-In", class: "btn btn-success check-in" %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class= "confirmation">You're checked in from <%= @latest_checkin.start_time.to_s(:time)%> until <%= @latest_checkin.end_time.to_s(:time)%></div>
+    <% end %>
   </div>
 </div>

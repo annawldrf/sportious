@@ -15,6 +15,8 @@ class CourtsController < ApplicationController
 
   def show
     @court = Court.find(params[:id])
+    @latest_checkin = @court.current_check_ins.select { |checkin| checkin.user == current_user }.first unless @court.current_check_ins.empty?
+    # raise
   end
 
   def new
