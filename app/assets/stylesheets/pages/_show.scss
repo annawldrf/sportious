@@ -32,3 +32,14 @@ a {
     border-color: $light-sportious;
    }
 }
+
+.confirmation {
+  margin: 4px;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: $dark-sportious;
+  color: $white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
