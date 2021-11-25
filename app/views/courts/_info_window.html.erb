@@ -1,6 +1,6 @@
-<%= link_to court_path(court) do %>
   <p>Court type: <%= court.court_type.name.capitalize %></p>
   <p>Address: <%= court.address %></p>
+    <%= link_to court_path(court) do %>
   <div class="card">
     <% if court.photo.attached? %>
       <%= cl_image_tag court.photo.key, crop: :fill %>
@@ -8,6 +8,7 @@
       <% asset_path('/generic_image.jpeg') %>
     <% end %>
   </div>
+  <br>
 <% end %>
 
 <%#= link_to "Click me", court_path(court) %>

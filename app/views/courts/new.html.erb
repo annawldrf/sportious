@@ -3,8 +3,8 @@
   <%= simple_form_for(@court) do |f| %>
       <%= f.input :address %>
       <%= f.input :description %>
-      <%= f.input :court_type, :collection => %w[Basketball Volleyball PingPong] %>
-     <%= f.input :photo, as: :file %>
+      <%= f.association :court_type, collection: CourtType.all %>
+      <%= f.input :photo, as: :file %>
       <%= f.button :submit %>
       <% end  %>
   <%= link_to 'Back', courts_path, class: "btn"   %>
