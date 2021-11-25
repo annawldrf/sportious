@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Add a New Court:</h1>
+  <%= simple_form_for(@court) do |f| %>
+      <%= f.input :address %>
+      <%= f.input :description %>
+      <%= f.input :court_type, :collection => %w[Basketball Volleyball PingPong] %>
+     <%= f.input :photo, as: :file %>
+      <%= f.button :submit %>
+      <% end  %>
+  <%= link_to 'Back', courts_path, class: "btn"   %>
+</div>
