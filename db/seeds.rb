@@ -9,7 +9,6 @@
 require 'faker'
 require 'uri'
 
-
 Court.destroy_all
 User.destroy_all
 
@@ -32,7 +31,6 @@ users << user_admin
   user.save!
   users << user
 end
-
 
 CourtType.create(name: "basketball")
 CourtType.create(name: "ping pong")
@@ -63,6 +61,7 @@ basketball_courts_images = [
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685200/sportious/courts/basketball/Ganghoferstra%C3%9Fe-55_rc93ze.jpg",
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685212/sportious/courts/basketball/Kazmairstra%C3%9Fe-89_urnauy.jpg"
 ]
+puts "Creating courts..."
 
 basketball_addresses.each_with_index do |address, index|
   court = Court.new(
@@ -140,3 +139,5 @@ pingpong_addresses.each_with_index do |address, index|
   court.save!
   pingpong_courts << court
 end
+
+puts "Finished courts"

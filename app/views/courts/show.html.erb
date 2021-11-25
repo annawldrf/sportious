@@ -1,9 +1,17 @@
-<div class="container">
-  <div class="top-part" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @court.photo.attached? ? cl_image_path(@court.photo.key) : asset_path('/generic_image.jpeg')%>);">">
+<div class="container court">
+  <div class="top-part" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @court.photo.attached? ? cl_image_path(@court.photo.key) : asset_path('/generic_image.jpeg')%>);">
     <h1><%= @court.address %></h1>
   </div>
-  <div>
-    <p><%= @court.description %></p>
-    <button>Check-In</button>
+  <div class="container content">
+    <div class="directions"><%= link_to '🗺 Get directions', "https://maps.google.com/#{@court.address}" %></div>
+    <%# <div class="rating"><%= link_to '⭐️⭐️⭐️⭐️⭐️ See reviews', new_court_path</div> %>
+    <a href="#"><div class="rating"></i>⭐️⭐️⭐️⭐️⭐️ See reviews </div></a>
+    <div>
+    <br>
+      <h3>About the Court</h3>
+      <p><%= @court.description %></p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, itaque, error ratione reiciendis sapiente delectus veniam quisquam voluptates cupiditate sunt deserunt dolorem distinctio quidem accusamus inventore dignissimos, obcaecati nulla magni!</p>
+    </div>
+      <button class="btn btn-success check-in">Check-In</button>
   </div>
 </div>
