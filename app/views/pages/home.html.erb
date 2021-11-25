@@ -1,2 +1,38 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+  <!-- container storing basic text -->
+<div class="banner">
+  <div class="banner-container">
+    <div class="banner-text">
+      <h1>Looking for an outdoor activity?</h1>
+      <p>Find all the courts in your neighborhood</p>
+    </div>
+  </div>
+  <!-- container storing search bar w/ different user inputs -->
+  <div class="container">
+    <div class="card-index">
+      <div class="card">
+        <label for="court" class="center">Where do you want to play?</p>
+        <%= form_tag courts_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-group",
+            placeholder: "Find a court"
+          %>
+          <div>
+            <%= label_tag 'volleyball', 'Volleyball' %>
+            <%= check_box_tag "volleyball", true %>
+          </div>
+          <div>
+            <%= label_tag 'basketball', 'Basketball' %>
+            <%= check_box_tag "basketball", true %>
+          </div>
+          <div>
+            <%= label_tag 'ping pong', 'Ping pong' %>
+            <%= check_box_tag "ping pong", true %>
+          </div>
+          <%= submit_tag "Find your spots!", class: "btn btn-flat" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- search button that pushes to next action / tools overview page -->
+</div>

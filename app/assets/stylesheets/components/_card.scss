@@ -1,0 +1,33 @@
+.card {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.form-group {
+  height: 28px !important;
+}
+
+.card-index {
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 18px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+label.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+input {
+  margin-left: 5px;
+}

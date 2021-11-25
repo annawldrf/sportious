@@ -1,0 +1,21 @@
+.banner {
+  background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("generic_image.jpeg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 560px;
+  width: auto;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  position: relative;
+  padding-top: 50px;
+}
+
+.banner-text {
+  color: black;
+}
