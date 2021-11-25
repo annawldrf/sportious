@@ -3,14 +3,6 @@
   background-color: transparent !important;
 }
 
-label {
-  margin: 0 auto;
-}
-
-.home-tag {
-  margin: 10 20;
-}
-
 .form-group {
   height: 28px !important;
 }
@@ -23,4 +15,19 @@ label {
   font-size: 18px;
   border-radius: 5px;
   margin: 0 auto;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+label.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+input {
+  margin-left: 5px;
 }
