@@ -1,0 +1,35 @@
+.banner {
+  background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("banner.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 560px;
+  width: auto;
+}
+
+.show-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.show-banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  position: relative;
+  padding-top: 50px;
+}
+
+.banner-text {
+  color: black;
+}
