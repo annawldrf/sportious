@@ -11,6 +11,7 @@ require 'uri'
 
 Court.destroy_all
 User.destroy_all
+CourtType.destroy_all
 
 users = []
 user_admin = User.new(
