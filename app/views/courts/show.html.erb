@@ -12,6 +12,7 @@
       <p><%= @court.description %></p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, itaque, error ratione reiciendis sapiente delectus veniam quisquam voluptates cupiditate sunt deserunt dolorem distinctio quidem accusamus inventore dignissimos, obcaecati nulla magni!</p>
   <div class="checkin">
+  <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
     <% if @latest_checkin.nil? %>
       <%= form_tag court_check_ins_path(@court), method: :post do %>
         <div class="card">
