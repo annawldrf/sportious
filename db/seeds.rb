@@ -10,8 +10,8 @@ require 'faker'
 require 'uri'
 
 Court.destroy_all
-User.destroy_all
 CourtType.destroy_all
+User.destroy_all
 
 users = []
 user_admin = User.new(
@@ -33,9 +33,9 @@ users << user_admin
   users << user
 end
 
-CourtType.create(name: "basketball")
-CourtType.create(name: "ping pong")
-CourtType.create(name: "volleyball")
+CourtType.create(name: "Basketball")
+CourtType.create(name: "Ping Pong")
+CourtType.create(name: "Beach-Volleyball")
 
 basketball_addresses = [
   "Belgradstraße 195, München",
@@ -91,13 +91,15 @@ beach_volleyball_addresses = [
   "Köglweg 99, Taufkirchen"
 ]
 beach_volleyball_courts = []
-
+beach_volleyball_courts_image = "https://res.cloudinary.com/dhr7binhu/image/upload/v1637923446/sportious/courts/volleyball_court_qgpshp.jpg"
 beach_volleyball_addresses.each do |address|
   court = Court.new(
     address: address,
     court_type: CourtType.third,
     user: users.sample
   )
+  file = URI.open(beach_volleyball_courts_image)
+  court.photo.attach(io: file, filename: 'court.png', content_type: 'image/png')
   court.save!
   beach_volleyball_courts << court
 end
