@@ -34,7 +34,7 @@ users << user_admin
 end
 
 CourtType.create(name: "Basketball")
-CourtType.create(name: "Ping.Pong")
+CourtType.create(name: "Ping-Pong")
 CourtType.create(name: "Beach-Volleyball")
 
 basketball_addresses = [
