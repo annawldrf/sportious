@@ -22,7 +22,7 @@ class CourtsController < ApplicationController
         lat: court.latitude,
         lng: court.longitude,
         info_window: render_to_string(partial: "info_window", locals: { court: court }),
-        image_url: helpers.asset_url("#{court.court_type.name}.png"),
+        image_url: helpers.asset_url("#{court.court_type.name.underscore}.png"),
         }
       end
     else
@@ -31,7 +31,7 @@ class CourtsController < ApplicationController
         lat: court.latitude,
         lng: court.longitude,
         info_window: render_to_string(partial: "info_window", locals: { court: court }),
-        image_url: helpers.asset_url("#{court.court_type.name}.png"),
+        image_url: helpers.asset_url("#{court.court_type.name.underscore}.png"),
         }
       end
     end
