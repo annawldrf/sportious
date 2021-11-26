@@ -5,7 +5,7 @@ class Court < ApplicationRecord
   has_one_attached :photo
 
   has_many :reviews
-  has_many :check_ins
+  has_many :check_ins, dependent: :destroy
   has_many :messages
   has_many :admin_requests
   has_many :lessons
