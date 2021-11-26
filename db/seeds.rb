@@ -43,7 +43,6 @@ basketball_addresses = [
   "Mankeiweg, München", # Sintpertstraße 9
   "Maßmann Park, München", # Streetballplatz "Maßmannpark", Heßstraße 77, 80797 München
   "Westpark, München",
-  "Max-Planck-Straße, München",
   "Matthias-Pschorr-Straße 4, München",
   "Barer Straße 29, München",
   "Ganghoferstraße 55, München",
@@ -56,7 +55,6 @@ basketball_courts_images = [
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685240/sportious/courts/basketball/Mankeiweg_ziajnd.jpg",
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685203/sportious/courts/basketball/Ma%C3%9Fmann-Park_ldpygx.jpg",
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685210/sportious/courts/basketball/Westpark_qpp7qs.jpg",
-  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685214/sportious/courts/basketball/Max-Planck-Stra%C3%9Fe_jn2c5k.jpg",
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685222/sportious/courts/basketball/Matthias-Pschorr-Stra%C3%9Fe_4_a99uee.jpg",
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685197/sportious/courts/basketball/Barer-Stra%C3%9Fe-29_n0zla4.jpg",
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685200/sportious/courts/basketball/Ganghoferstra%C3%9Fe-55_rc93ze.jpg",
@@ -109,7 +107,6 @@ pingpong_addresses = [
   "Wilderich-Lang-Straße 10, München",
   "Heßstraße 77, München",
   "Friedrichstraße 15, München",
-  "Dietramszeller Str. 9, München",
   "Marbachstraße 4, München",
   "Böhmerwaldpl. 11, München",
   "Salzsenderweg, München",
@@ -122,7 +119,6 @@ pingpong_courts_images = [
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685709/sportious/courts/pingpong/Wilderich-Lang-Stra%C3%9Fe-10_akgxdm.jpg",
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685704/sportious/courts/pingpong/He%C3%9Fstra%C3%9Fe-77_pfcyzj.jpg",
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685705/sportious/courts/pingpong/Friedrichstra%C3%9Fe-15_wnwjq8.jpg",
-  "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685708/sportious/courts/pingpong/Dietramszeller-Str.-9_yveboq.jpg",
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685706/sportious/courts/pingpong/Marbachstra%C3%9Fe-4_up5jd5.jpg",
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685709/sportious/courts/pingpong/Bo%CC%88hmerwaldpl.-11_d7mehn.jpg",
   "https://res.cloudinary.com/dhr7binhu/image/upload/v1637685708/sportious/courts/pingpong/Salzsenderweg_ils7le.jpg",
