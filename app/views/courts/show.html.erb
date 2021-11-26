@@ -7,14 +7,13 @@
     <%# <div class="rating"><%= link_to '⭐️⭐️⭐️⭐️⭐️ See reviews', new_court_path</div> %>
     <a href="#"><div class="rating"></i>⭐️⭐️⭐️⭐️⭐️ See reviews </div></a>
     <div>
-    <br>
-      <h3>About the Court</h3>
-      <p><%= @court.description %></p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, itaque, error ratione reiciendis sapiente delectus veniam quisquam voluptates cupiditate sunt deserunt dolorem distinctio quidem accusamus inventore dignissimos, obcaecati nulla magni!</p>
-  <div class="checkin">
-  <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
+  <div class="container_checkins">
+    <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
+  </div>
+  <div class="container checkin">
     <% if @latest_checkin.nil? %>
       <%= form_tag court_check_ins_path(@court), method: :post do %>
+      <div class="alignonsameline">
         <div class="card">
             <label for="from">Starting Time</p>
             <%= time_field_tag :start_time, params[:start_time], class: "form-group", placeholder: "From" %>
@@ -23,6 +22,7 @@
           <label for="until">End Time</p>
           <%= time_field_tag :end_time, params[:end_time], class: "form-group", placeholder: "Until" %>
         </div>
+      </div>
         <div class="search-button">
           <%= submit_tag "Check-In", class: "btn btn-success check-in" %>
         </div>
@@ -30,5 +30,11 @@
     <% else %>
       <div class= "confirmation">You're checked in from <%= @latest_checkin.start_time.to_s(:time)%> until <%= @latest_checkin.end_time.to_s(:time)%></div>
     <% end %>
+  </div>
+  <br>
+  <div class="court_text">
+    <h4>General information</h4>
+    <p><%= @court.description %></p>
+    <p>Munich has a range of different courts across the city. Its players are generally from all around the world. The location around <%= "#{@court.address}" %> also offers great chillout areas and bars to relax afterwards.</p>
   </div>
 </div>

@@ -8,7 +8,7 @@ class Lesson < ApplicationRecord
   validates :description, presence: true
   validates :capacity, presence: true
 
-  validates :date_validation
+  validate :date_validation
   validates :start_time, presence: true
   validates :end_time, presence: true
 

@@ -1,6 +1,13 @@
 .card {
   border: none !important;
   background-color: transparent !important;
+  margin-top: 5px;
+}
+
+.card p {
+  margin-bottom: 3px !important;
+  margin-top: 15px !important;
+  font-size: 14px;
 }
 
 .form-group {
@@ -11,14 +18,16 @@
   background-position: center;
   justify-content: center;
   align-items: center;
-  color: black;
-  font-size: 18px;
+  color: white;
+  font-size: 14px;
   border-radius: 5px;
   margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .center {
-  margin: 0 auto;
+  margin: auto;
 }
 
 label.container {
@@ -28,6 +37,6 @@ label.container {
   font-weight: bold;
 }
 
-input {
-  margin-left: 5px;
+.form-group {
+  height: 25px !important;
 }

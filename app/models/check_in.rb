@@ -2,7 +2,7 @@ class CheckIn < ApplicationRecord
   belongs_to :user
   belongs_to :court
 
-  # validates :date_validation
+  validate :date_validation
   validates :start_time, presence: true
   validates :end_time, presence: true
 
