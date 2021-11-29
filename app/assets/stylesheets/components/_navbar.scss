@@ -23,11 +23,13 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 70px;
+  position:fixed;
+  top:0;
 }
 
 .navbar-toggler {
-  background-color: $primary;
+  background-color: $sportious;
 }
 
 .navbar-toggler-icon {
