@@ -6,6 +6,7 @@ class LessonsController < ApplicationController
 
   def new
     @lesson = Lesson.new
+    @court = Court.find(params[:court_id])
   end
 
   def create
