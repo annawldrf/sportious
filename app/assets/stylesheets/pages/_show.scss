@@ -13,6 +13,21 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
+.star-container {
+  position: relative;
+  align-items: flex-start ;
+  justify-content: space-evenly;
+}
+
+.br-widget a {
+  font-size: 15px !important;
+  width: 15px !important;
+}
+
+.br-widget {
+  height: 0px !important;
+}
+
 .directions, .rating {
   margin: 4px;
   padding: 10px;

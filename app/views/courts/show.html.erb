@@ -5,10 +5,10 @@
   <div class="container content">
     <div class="directions"><%= link_to '🗺 Get directions', "https://www.google.com/maps/place/#{@court.address}" %></div>
     <%# <div class="rating"><%= link_to '⭐️⭐️⭐️⭐️⭐️ See reviews', courts_path</div> %>
-    <div class="container rating">
-      <h3> Reviews </h3>
-        <p>Average rating: <%= @court.average_rating %></p>
-        <%= render "reviews/star_rating", rating: @court.stars %>
+    <div class="container rating star-container">
+      <%= render "reviews/star_rating", rating: @court.stars %> Click to see reviews
+    </div>
+    <div class="container rating star-container">
       <% @court.reviews.each do |review| %>
         <%= render "reviews/review", review: review %>
       <% end %>
