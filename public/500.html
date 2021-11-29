@@ -2,15 +2,15 @@
 <html>
 
 <head>
-  <title>We're sorry, but something wnent wrong (500)</title>
+  <title>We're sorry but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
     .rails-default-error-page {
-      background-color: black;
       color: #2E2F30;
       text-align: center;
       font-family: arial, sans-serif;
       margin: 0;
+      background: none;
     }
 
     .rails-default-error-page div.dialog {
@@ -23,15 +23,13 @@
 
       border-top-left-radius: 9px;
       border-top-right-radius: 9px;
-      background-color: transparent;
-      padding: 7px 12% 0;
-      box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
     }
 
     .rails-default-error-page h1 {
       font-size: 80%;
-      color: #AFEA0D;
+      color: black;
       line-height: 1.5em;
+      margin-bottom: 10px;
     }
 
     .rails-default-error-page div.dialog>p {
@@ -48,16 +46,42 @@
       color: #666;
       box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
     }
+
+    .container {
+      padding-top: 5px;
+      padding-bottom: 1px;
+      color: $white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    .btn-flat {
+      color: white;
+      padding: 8px 24px;
+      border-radius: 4px;
+      background: #AFEA0D;
+      transition: background 0.3s ease;
+      margin-bottom: 10px;
+      text-decoration: none !important;
+      color: black;
+      font-family: inherit !important;
+    }
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
   <div class="dialog">
-    <h1>We're sorry, but no one seems to play here today</h1>
-    <div>
-      <img src="./images/lost_place.jpg" width="250px" height= "175px">
+    <div class="container">
+      <h1>We're sorry, but no one seems to play here today</h1>
+      <img src="./images/lost_place.jpg" width="250px" height="175px">
+      <br>
+      <br>
+      <a class="btn btn-flat" href="/">Home</a>
+      <br>
     </div>
+  </div>
 </body>
 
 </html>
