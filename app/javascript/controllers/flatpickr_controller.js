@@ -5,7 +5,6 @@ import Flatpickr from 'stimulus-flatpickr'
 // create a new Stimulus controller by extending stimulus-flatpickr wrapper controller
 export default class extends Flatpickr {
   connect() {
-    console.log("Hello flatpickr")
     // sets your language (you can also set some global setting for all time pickers)
     this.config = {
       dateFormat: "Y-m-d H:i",
