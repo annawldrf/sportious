@@ -10,7 +10,7 @@
       <%#= f.input :start_time, label: false, input_html: { class: 'lesson-new-input' }%>
       <%#= <label for="start_date">Start Date</label> %>
       <div class="individual-flatpickr-styling">
-        <p> Start Date <abbr title="required">*</abbr> </p>
+        <p> Start Time <abbr title="required">*</abbr> </p>
       </div>
       <%= f.text_field :start_time,
                         data: {
@@ -21,7 +21,7 @@
                           disable_mobile: "true" }
       %>
       <div class="individual-flatpickr-styling">
-        <p> End Date <abbr title="required">*</abbr> </p>
+        <p> End Time <abbr title="required">*</abbr> </p>
       </div>
       <%= f.text_field :end_time,
                         data: {
