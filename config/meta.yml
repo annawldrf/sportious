@@ -1,5 +1,5 @@
 meta_product_name: "Sportious"
 meta_title: "Sportious · find public sport courts nearby"
 meta_description: "Sportious has the list of courts available. Browse through different categories and find your next sports location today."
-meta_image: "homepage.jpg" # should exist in `app/assets/images/`
+meta_image: "og_image_picture.jpg" # should exist in `app/assets/images/`
 twitter_account: "@sportious"   # required for Twitter Cards
