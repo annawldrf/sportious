@@ -15,6 +15,6 @@ class Court < ApplicationRecord
   validates :address, presence: true
 
   def current_check_ins
-    check_ins.select { |a| a.start_time < Time.now && a.end_time > Time.now }
+    check_ins.select { |a| a.start_time >= Time.now && a.end_time > a.start_time }
   end
 end
