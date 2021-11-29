@@ -1,0 +1,7 @@
+<div>
+  <h6><%= review.title %> <%= render "reviews/star_rating", rating: review.rating %></h6>
+  <%= review.content %>
+    <br>
+  <i>user: <%= review.user.username %></i>
+    <br> ------------------------------------------
+</div>

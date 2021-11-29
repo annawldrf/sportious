@@ -24,11 +24,28 @@ class Court < ApplicationRecord
     average = 0
 
     reviews.each do |f|
-      sum += f.rating.to_f
+      sum += f.rating.to_f.round(1)
       number.push(f)
-      average = sum / number.count.to_f
+      average = sum / number.count.to_f.round(1)
     end
 
     return average
   end
+
+  def stars
+    average_rating.round
+  end
+
+'  def stars(rating)
+    zero_star_icon_name = "star"
+    full_star_icon_name = "star_fill"
+    half_star_icon_name = "star_lefthalf_fill"
+    rating_round_point5 = (rating * 2).round / 2.0
+
+    (1..5).map do |i|
+      next(full_star_icon_name) if i <= rating_round_point5
+      next(half_star_icon_name) if rating_round_point5 + 0.5 == i
+      zero_star_icon_name
+    end
+  end'
 end

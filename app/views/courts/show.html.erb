@@ -7,16 +7,10 @@
     <%# <div class="rating"><%= link_to '⭐️⭐️⭐️⭐️⭐️ See reviews', courts_path</div> %>
     <div class="container rating">
       <h3> Reviews </h3>
-        <p>Average rating: <%= @court.average_rating %>
-        </p>
-      <% @court.reviews.each do |f| %>
-        <div>
-          <h6><%= f.title %> | <%= f.rating %> stars</h6>
-          <%= f.content %>
-            <br>
-          <i>user: <%= f.user.username %></i>
-            <br> ------------------------------------------
-        </div>
+        <p>Average rating: <%= @court.average_rating %></p>
+        <%= render "reviews/star_rating", rating: @court.stars %>
+      <% @court.reviews.each do |review| %>
+        <%= render "reviews/review", review: review %>
       <% end %>
     </div>
     <div class="container rating">
