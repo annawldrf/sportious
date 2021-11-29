@@ -3,7 +3,21 @@
 }
 
 .court-new-input {
-  background-color: lightgray;
+  background-color: white;
   width: 90%;
   margin: 0 auto;
+}
+
+.lesson-new-label {
+  color: white;
+  display: block;
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+.lesson-new-input {
+  background-color: white;
+  margin: 0 0;
+  width: 90%;
 }
