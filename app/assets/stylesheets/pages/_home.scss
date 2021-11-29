@@ -9,6 +9,14 @@
   width: 90%;
   border: 1px solid lightgrey;
   box-shadow: none;
+  position: relative;
+  input {
+    height: 70%;
+  }
+}
+
+.mapboxgl-ctrl-geocoder--icon-search {
+  top: 6px !important;
 }
 
 .homepage-icon {
