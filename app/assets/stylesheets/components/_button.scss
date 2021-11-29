@@ -10,6 +10,18 @@
   border: none;
 }
 
+.btn-flat-lessons {
+  color: $black;
+  border-radius: 6px;
+  background: $sportious;
+  transition: background 0.3s ease;
+  margin: 20px 10px 10px 18px;
+  font-size: 16px;
+  padding: 8px;
+  font-weight: bold !important;
+  border: none;
+}
+
 .btn-flat:hover {
   background: $dark-sportious;
   color: $white;

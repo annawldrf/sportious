@@ -13,3 +13,37 @@
 .mapboxgl-ctrl-geocoder--input {
   background-color: lightgray;
 }
+
+.lesson-new-input {
+  background-color: lightgray;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.lesson-new-label {
+  color: white !important;
+  margin: 3px 18px !important;
+  text-align: left !important;
+}
+
+.lesson-new-label-1 {
+  color: white !important;
+  margin: 3px 18px !important;
+  margin-top: 16px !important;
+  text-align: left !important;
+}
+
+.flatpickr-input {
+  margin-left: 16px;
+  border-radius: 6px;
+  height: 40px;
+  width: 91%;
+  margin-bottom: 16px;
+  background-color: lightgrey !important;
+}
+
+.individual-flatpickr-styling p {
+  margin-bottom: 0px;
+  margin-left: 18px;
+  color: white;
+}
