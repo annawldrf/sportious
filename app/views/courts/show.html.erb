@@ -3,7 +3,7 @@
     <h1><%= @court.address %></h1>
   </div>
   <div class="container content">
-    <div class="directions"><%= link_to '🗺 Get directions', "https://maps.google.com/#{@court.address}" %></div>
+    <div class="directions"><%= link_to '🗺 Get directions', "https://www.google.com/maps/place/#{@court.address}" %></div>
     <%# <div class="rating"><%= link_to '⭐️⭐️⭐️⭐️⭐️ See reviews', new_court_path</div> %>
     <a href="#"><div class="rating"></i>⭐️⭐️⭐️⭐️⭐️ See reviews </div></a>
     <div>
@@ -24,7 +24,7 @@
         </div>
       </div>
         <div class="search-button">
-          <%= submit_tag "Check-In", class: "btn btn-success check-in" %>
+          <%= submit_tag "Check-In", class: "btn-flat check-in" %>
         </div>
       <% end %>
     <% else %>

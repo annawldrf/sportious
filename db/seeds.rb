@@ -74,6 +74,23 @@ basketball_addresses.each_with_index do |address, index|
   court.save!
   basketball_courts << court
 end
+# creating lessons for basketball courts
+puts "starting basketlessons"
+basketball_titles = ["Basketball Passing Skills", "Hooping like a Pro", "Defense Training", "Athletic Training - Basketball"]
+basketball_desc = ["I was training basketball for over 10 years. I want to teach and show some tricks how to optimize your passing skills, as its elementary for your success", "We want to traing on your general physics such as jumping or speed.", "Lets improve together your basketball basics. I can show you how to shoot hoops easily, how to defense and attack."]
+basketball_courts.each do |court|
+  lesson1 = Lesson.new(
+    title: basketball_titles.sample,
+    description: basketball_desc.sample,
+    start_time:  DateTime.new(2021, 12, 3, 16, 45),
+    end_time: DateTime.new(2021, 12, 31, 17, 45),
+    capacity: [4, 2, 6].sample,
+    price: [4.5, 2, 6, 0].sample,
+    court: court,
+    user: users.sample
+  )
+  lesson1.save!
+end
 
 
 beach_volleyball_addresses = [
@@ -100,6 +117,24 @@ beach_volleyball_addresses.each do |address|
   court.photo.attach(io: file, filename: 'court.png', content_type: 'image/png')
   court.save!
   beach_volleyball_courts << court
+end
+
+# creating lessons for volleyball courts
+puts "starting volleylessons"
+volleyball_titles = ["Beachvolleyball Allround Training", "Attacking & Blocking for Beginners", "How to pass and set the ball properly"]
+volleyball_desc = ["Lets get ready for summer. I will show you the secrets of beach volleyball, so you succeed at your next match", "Very basic alround beach training to get familiar with the very basics. For anyone who wants to get started.", "Lets improve together your volleyball basics. I can show you how to block or attack."]
+beach_volleyball_courts.each do |court|
+  lesson2 = Lesson.new(
+    title: volleyball_titles.sample,
+    description: volleyball_desc.sample,
+    start_time:  DateTime.new(2021, 12, 3, 16, 45),
+    end_time: DateTime.new(2021, 12, 31, 17, 45),
+    capacity: [4, 2, 6].sample,
+    price: [0, 3, 5, 5, 3.5].sample,
+    court: court,
+    user: users.sample
+  )
+  lesson2.save!
 end
 
 pingpong_addresses = [
@@ -137,6 +172,26 @@ pingpong_addresses.each_with_index do |address, index|
   court.photo.attach(io: file, filename: 'court.png', content_type: 'image/png')
   court.save!
   pingpong_courts << court
+end
+
+# creating lessons for pingpong tables
+puts "starting pingpong lessons"
+pingpong_titles = ["Learning Forehand Drive & Backhand Drive", "Methods for returning serves - beginner and intermediate level", "Spinning the ball - but how?", "Basic Table Tennis Training", "Intermediate Training"]
+pingpong_desc = ["Practice refers to all the time you spend developing your table tennis game by concentrating on some aspects you want to strengthen.", "To really advance your game, it’s important to find others with similar goals and playing levels and practice/train with them. A table tennis club is a great place to do this.", "Lets work together on our skills and improve them to enjoy table tennis even more."]
+pingpong_courts.each do |table|
+  random_day = rand(3..31)
+  random_starttime = rand(15..19)
+  lesson3 = Lesson.new(
+    title: pingpong_titles.sample,
+    description: pingpong_desc.sample,
+    start_time: DateTime.new(2021, 12, random_day, random_starttime, 00),
+    end_time: DateTime.new(2021, 12, random_day, random_starttime+rand(1..2), 00),
+    capacity: [4, 2, 6].sample,
+    price: [0, 0, 2, 4, 3.5].sample,
+    court: table,
+    user: users.sample
+  )
+  lesson3.save!
 end
 
 puts "Finished courts"
