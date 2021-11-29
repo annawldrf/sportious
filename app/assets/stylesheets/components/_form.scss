@@ -1,5 +1,7 @@
 .court-new-label {
   color: white;
+  margin: 3px 18px !important;
+  text-align: left !important;
 }
 
 .court-new-input {
@@ -8,6 +10,7 @@
   margin: 0 auto;
 }
 
+<<<<<<< HEAD
 .lesson-new-label {
   color: white;
   display: block;
@@ -20,4 +23,8 @@
   background-color: white;
   margin: 0 0;
   width: 90%;
+=======
+.mapboxgl-ctrl-geocoder--input {
+  background-color: lightgray;
+>>>>>>> master
 }
