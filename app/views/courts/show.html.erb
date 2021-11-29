@@ -4,8 +4,31 @@
   </div>
   <div class="container content">
     <div class="directions"><%= link_to '🗺 Get directions', "https://www.google.com/maps/place/#{@court.address}" %></div>
-    <%# <div class="rating"><%= link_to '⭐️⭐️⭐️⭐️⭐️ See reviews', new_court_path</div> %>
-    <a href="#"><div class="rating"></i>⭐️⭐️⭐️⭐️⭐️ See reviews </div></a>
+    <%# <div class="rating"><%= link_to '⭐️⭐️⭐️⭐️⭐️ See reviews', courts_path</div> %>
+    <div class="container rating">
+      <h3> Reviews </h3>
+        <p>Average rating: <%= @court.average_rating %>
+        </p>
+      <% @court.reviews.each do |f| %>
+        <div>
+          <h6><%= f.title %> | <%= f.rating %> stars</h6>
+          <%= f.content %>
+            <br>
+          <i>user: <%= f.user.username %></i>
+            <br> ------------------------------------------
+        </div>
+      <% end %>
+    </div>
+    <div class="container rating">
+      <%# <a href="#"><div class="rating"></i>⭐️⭐️⭐️⭐️⭐️ See reviews </div></a> %>
+        <%= simple_form_for([@court, @court.reviews.build]) do |f| %>
+          <%#= f.input :rating, collection: [1,2,3,4,5] %>
+          <%= f.input :rating, collection: (1..5).to_a %>
+          <%= f.input :title %>
+          <%= f.input :content %>
+          <%= f.button :submit %>
+        <% end %>
+    </div>
     <div>
   <div class="container_checkins">
     <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>

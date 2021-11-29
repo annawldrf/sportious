@@ -17,4 +17,18 @@ class Court < ApplicationRecord
   def current_check_ins
     check_ins.select { |a| a.start_time < Time.now && a.end_time > Time.now }
   end
+
+  def average_rating
+    sum = 0
+    number = []
+    average = 0
+
+    reviews.each do |f|
+      sum += f.rating.to_f
+      number.push(f)
+      average = sum / number.count.to_f
+    end
+
+    return average
+  end
 end
