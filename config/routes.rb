@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :courts, only: [:new, :create, :show, :index] do
     resources :check_ins, only: [:create]
-    resources :reviews, :lessons, only: [:new, :create, :show, :index]
+    resources :reviews, only: [:new, :create, :show, :index]
+    resources :lessons, only: [:new, :create, :index]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

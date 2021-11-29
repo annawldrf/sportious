@@ -4,7 +4,7 @@
   </div>
 </div>
 <div class="container" style="height: 70vh; ">
-  <%= simple_form_for(@courts.lesson) do |f| %>
+  <%= simple_form_for([@court, @lesson]) do |f| %>
       <%= f.input :title%>
       <%= f.input :description%>
       <%= f.input :start_time%>
@@ -16,7 +16,7 @@
       <%#= f.association :court(court_type) %>
       <%= f.input :photo, as: :file%>
       <div class="d-flex justify-content-between pb-3">
-        <%= link_to 'Back', courts_path, class: "btn-grey"   %>
+        <%#= link_to 'Back', courts_path, class: "btn-grey"   %>
         <%= f.button :submit, class: "btn-flat" %>
       </div>
       <% end  %>
