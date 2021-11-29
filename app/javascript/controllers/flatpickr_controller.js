@@ -9,8 +9,8 @@ export default class extends Flatpickr {
     // sets your language (you can also set some global setting for all time pickers)
     this.config = {
       dateFormat: "Y-m-d H:i",
-      disableMobile: "true",
-      enableTime: "true"
+      disable_mobile: "true",
+      enable_time: "true"
     }
   }
 
