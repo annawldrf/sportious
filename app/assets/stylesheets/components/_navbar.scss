@@ -7,6 +7,8 @@
   padding-bottom: 0px !important;
   z-index: 5;
   margin-top: 5px !important;
+  position:fixed;
+  top:0;
 }
 
 .show {
@@ -24,8 +26,6 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 70px;
-  position:fixed;
-  top:0;
 }
 
 .navbar-toggler {

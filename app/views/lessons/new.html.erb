@@ -1,0 +1,23 @@
+<div class="container lesson" style="height: 30vh; ">
+  <div class="top-part" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('arena200.jpg')%>);">
+    <h1>Add a New Lesson:</h1>
+  </div>
+</div>
+<div class="container" style="height: 70vh; ">
+  <%= simple_form_for(@court) do |f| %>
+      <%= f.input :title%>
+      <%= f.input :description%>
+      <%= f.input :start_time%>
+      <%= f.input :end_time%>
+      <%= f.input :capacity%>
+      <%= f.input :price%>
+      <%= f.association :user_id(current_user) %>
+      <%= f.association :court_id(@court) %>
+      <%= f.association :court_type %>
+      <%= f.input :photo, as: :file%>
+      <div class="d-flex justify-content-between pb-3">
+        <%= link_to 'Back', courts_path, class: "btn-grey"   %>
+        <%= f.button :submit, class: "btn-flat" %>
+      </div>
+      <% end  %>
+</div>
