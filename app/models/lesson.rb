@@ -3,6 +3,8 @@ class Lesson < ApplicationRecord
   belongs_to :court
   has_many :reservations
 
+  has_one_attached :photo
+
   validates :price, presence: true
   validates :title, presence: true
   validates :description, presence: true

@@ -1,5 +1,12 @@
 <div class="container court" style="width: 100%; height: 100vh;">
   <div class="top-part" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @court.photo.attached? ? cl_image_path(@court.photo.key) : asset_path('/generic_image.jpeg')%>);">
+    <%= link_to favorite_path(court_id: @court) do %>
+      <% if current_user.favorited?(@court) %>
+        <i class="fas fa-heart"></i>
+      <% else %>
+        <i class="far fa-heart"></i>
+      <% end %>
+    <% end %>
     <h1><%= @court.address %></h1>
   </div>
 

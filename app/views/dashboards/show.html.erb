@@ -1,0 +1,15 @@
+<div class="container court" style="width: 100%; height: 100vh;">
+  <div class="dashb-card top-center">
+    <p>My Courts</p>
+  </div>
+  <% @favorites.each do |favorite| %>
+    <div class="container content top-card">
+      <%= link_to court_path(favorite.favoritable) do %>
+        <div class="dashb-card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= favorite.favoritable.photo.attached? ? cl_image_path(favorite.favoritable.photo.key) : asset_path('/generic_image.jpeg')%>);">
+          <h1><%= favorite.favoritable.address %></h1>
+          <h1><%= favorite.favoritable.court_type.name %></h1>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

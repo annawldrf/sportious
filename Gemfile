@@ -33,6 +33,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'faker'
 gem 'geocoder'
+gem 'acts_as_favoritor'
 
 # Image Upload
 gem 'cloudinary', '~> 1.16.0'

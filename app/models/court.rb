@@ -4,13 +4,15 @@ class Court < ApplicationRecord
 
   has_one_attached :photo
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :check_ins, dependent: :destroy
   has_many :messages
   has_many :admin_requests
   has_many :lessons, dependent: :destroy
   belongs_to :court_type
   belongs_to :user
+
+  acts_as_favoritable
 
   validates :address, presence: true
 
