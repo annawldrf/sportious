@@ -1,0 +1,26 @@
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div>
+          <%= render "reviews/star_rating", rating: @court.stars %> Click to see reviews
+        </div>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <% court.reviews.each do |review| %>
+          <%= render "reviews/review", review: review %>
+        <% end %>
+        <div class="container rating">
+          <%= simple_form_for([@court, @court.reviews.build]) do |f| %>
+            <%= f.input :rating, collection: (1..5).to_a %>
+            <%= f.input :title %>
+            <%= f.input :content %>
+            <%= f.button :submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,7 @@
-<div>
-  <h6><%= review.title %></h6> <%= render "reviews/star_rating", rating: review.rating %>
-    <br>
-  <%= review.content %>
-    <br>
-  <i>user: <%= review.user.username %></i> <br>
-    ------------------------------------------
+<div class="card-review">
+  <div class="headline">
+    <h2><%= review.title%><%= render "reviews/star_rating", rating: review.rating %></h2>
+    <h6><%= review.content %></h6>
+  </div>
+  <p>(Added by: <%= review.user.username %>)</p>
 </div>
