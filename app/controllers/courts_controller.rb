@@ -40,7 +40,7 @@ class CourtsController < ApplicationController
   def show
     @court = Court.find(params[:id])
     @latest_checkin = @court.current_check_ins.select { |checkin| checkin.user == current_user }.first unless @court.current_check_ins.empty?
-    # raise
+    #raise
   end
 
   def new
@@ -55,6 +55,12 @@ class CourtsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def favorites
+    @court = Court.find(params[:court_id])
+    current_user.favorited?(@court) ? current_user.unfavorite(@court) : current_user.favorite(@court)
+    redirect_to court_path(@court)
   end
 
   private
