@@ -2,7 +2,7 @@ class CourtsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @courts = Court.all.geocoded
+    @courts = Court.near(params[:query], 10)
     selected_courts = []
     if params[:volleyball].present?
       selected_courts << @courts.select { |court| court.court_type.name == "Beach-Volleyball" }

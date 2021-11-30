@@ -1,16 +1,21 @@
 .btn-flat {
-  color: white;
-  border-radius: 4px;
-  background: #1EDD88;
+  color: $black;
+  border-radius: 6px;
+  background: $sportious;
   transition: background 0.3s ease;
-  margin-top: 10px;
+  margin: 10px;
   font-size: 14px;
+  padding: 8px;
   font-weight: bold !important;
+  border: none;
 }
 
 .btn-flat:hover {
-  background: #1BCB7F;
-  color: white;
+  background: $dark-sportious;
+  color: $white;
+  transform: perspective(1px) translateZ(0);
+  transition-duration: 0.3s;
+  transition-property: transform;
 }
 
 .search-button {

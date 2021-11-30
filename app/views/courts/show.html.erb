@@ -24,6 +24,11 @@
         <% end %>
     </div>
     <div>
+
+    <a href="#"><div class="rating">⭐️⭐️⭐️⭐️⭐️ See reviews </div></a>
+    <div class="lessons"><%= link_to 'See all lessons', lessons_path(court_id: @court) %></div>
+  </div>
+
   <div class="container_checkins">
     <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
   </div>
@@ -41,7 +46,7 @@
         </div>
       </div>
         <div class="search-button">
-          <%= submit_tag "Check-In", class: "btn btn-success check-in" %>
+          <%= submit_tag "Check-In", class: "btn-flat check-in" %>
         </div>
       <% end %>
     <% else %>

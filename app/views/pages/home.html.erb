@@ -12,11 +12,14 @@
       <div class="card">
         <label for="court" class="center"><p>Where do you want to play?</p>
         <%= form_tag courts_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-group",
-            placeholder: "Find your city"
-          %>
+          <div data-controller="geocoder" data-geocoder-api-key-value= <%= ENV['MAPBOX_API_KEY'] %> >
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-group d-none",
+              placeholder: "Find your city",
+              data: { geocoder_target: "address" }
+            %>
+          </div>
           <p>Which sports are you interested in?</p>
           <div class="card-index">
             <%= check_box_tag "volleyball", true %>

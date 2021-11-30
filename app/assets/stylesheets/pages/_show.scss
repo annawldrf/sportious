@@ -28,7 +28,7 @@
   height: 0px !important;
 }
 
-.directions, .rating {
+.directions, .rating, .lessons {
   margin: 4px;
   padding: 10px;
   border-radius: 12px;
@@ -87,7 +87,7 @@ a {
   margin: 4px;
   padding: 10px;
   border-radius: 12px;
-  background-color: #1EDD88;
+  background-color: $sportious;
   color: $black;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -95,7 +95,7 @@ a {
 }
 
 .players {
-  color: #1EDD88;
+  color: $sportious;
   margin-bottom: 0px;
 }
 

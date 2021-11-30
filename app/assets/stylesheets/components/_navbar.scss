@@ -7,6 +7,8 @@
   padding-bottom: 0px !important;
   z-index: 5;
   margin-top: 5px !important;
+  position:fixed;
+  top:0;
 }
 
 .show {
@@ -23,11 +25,11 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 100px;
+  width: 70px;
 }
 
 .navbar-toggler {
-  background-color: #1EDD88;
+  background-color: $sportious;
 }
 
 .navbar-toggler-icon {

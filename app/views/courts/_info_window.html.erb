@@ -3,7 +3,7 @@
     <%= link_to court_path(court) do %>
   <div class="card">
     <% if court.photo.attached? %>
-      <%= cl_image_tag court.photo.key, crop: :fill %>
+      <%= cl_image_tag court.photo.key, crop: :fill, class: "popup-image" %>
     <% else %>
       <% asset_path('/generic_image.jpeg') %>
     <% end %>

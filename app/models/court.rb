@@ -8,14 +8,14 @@ class Court < ApplicationRecord
   has_many :check_ins, dependent: :destroy
   has_many :messages
   has_many :admin_requests
-  has_many :lessons
+  has_many :lessons, dependent: :destroy
   belongs_to :court_type
   belongs_to :user
 
   validates :address, presence: true
 
   def current_check_ins
-    check_ins.select { |a| a.start_time < Time.now && a.end_time > Time.now }
+    check_ins.select { |a| a.start_time >= Time.now && a.end_time > a.start_time }
   end
 
   def average_rating
