@@ -1,12 +1,12 @@
 .container {
   height: 100vh;
-  padding-top: 80px;
+  margin-top: 80px;
 
 }
 .card-lesson {
   color: white;
   overflow: hidden;
-  height: 200px;
+  height: 120px;
   background: $grey;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -32,7 +32,9 @@
   padding: 16px;
 }
 
-.card-lesson p .details {
+.details {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  position: relative;
 }
