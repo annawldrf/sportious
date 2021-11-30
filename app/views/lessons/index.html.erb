@@ -1,0 +1,13 @@
+<%# Thats the card containing the info on a lesson %>
+
+<div class="container card-lesson">
+  <div class="card-lesson-infos">
+    <% @lessons.each do |lesson| %>
+    <h2><%= lesson.title%></h2>
+    <p><%= lesson.description %></p>
+
+    <p class="details"><%= lesson.start_time.strftime("%H:%M") %> - <%= lesson.end_time.strftime("%H:%M") %></p>
+    <p class="details"><%= lesson.capacity %> Persons | <%= lesson.price%>0€ </p>
+    <% end %>
+  </div>
+</div>

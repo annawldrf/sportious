@@ -4,9 +4,9 @@
   </div>
   <div class="container content">
     <div class="directions"><%= link_to '🗺 Get directions', "https://www.google.com/maps/place/#{@court.address}" %></div>
-    <%# <div class="rating"><%= link_to '⭐️⭐️⭐️⭐️⭐️ See reviews', new_court_path</div> %>
-    <a href="#"><div class="rating"></i>⭐️⭐️⭐️⭐️⭐️ See reviews </div></a>
-    <div>
+    <a href="#"><div class="rating">⭐️⭐️⭐️⭐️⭐️ See reviews </div></a>
+    <div class="lessons"><%= link_to 'See all lessons', lessons_path(court_id: @court) %></div>
+  </div>
   <div class="container_checkins">
     <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
   </div>
