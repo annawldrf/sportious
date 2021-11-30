@@ -12,6 +12,8 @@ class Court < ApplicationRecord
   belongs_to :court_type
   belongs_to :user
 
+  acts_as_favoritable
+
   validates :address, presence: true
 
   def current_check_ins
