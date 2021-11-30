@@ -1,0 +1,44 @@
+// card style for detail on lesson
+
+.card-review {
+  color: white;
+  overflow: hidden;
+  height: 80px;
+  background: $grey;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 4px;
+}
+
+.headline h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.headline h6 {
+  font-size: 13px;
+  font-weight: normal !important;
+}
+
+.card-review p {
+  font-size: 12px;
+  line-height: 1.2;
+  opacity: .8;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+#new_review {
+  color: white;
+  overflow: hidden;
+  background: $grey;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 4px;
+}

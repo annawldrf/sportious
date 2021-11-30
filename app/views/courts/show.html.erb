@@ -9,58 +9,51 @@
     <% end %>
     <h1><%= @court.address %></h1>
   </div>
+
+<%# Butttons or dropdown to get directions / to leave a review / to see all lessons for that court %>
+
   <div class="container content">
-    <div class="directions"><%= link_to '🗺 Get directions', "https://www.google.com/maps/place/#{@court.address}" %></div>
-    <%# <div class="rating"><%= link_to '⭐️⭐️⭐️⭐️⭐️ See reviews', courts_path</div> %>
-    <div class="container rating star-container">
-      <%= render "reviews/star_rating", rating: @court.stars %> Click to see reviews
+    <div class="directions">
+      <%= link_to '🗺 Get directions', "https://www.google.com/maps/place/#{@court.address}" %>
     </div>
     <div class="container rating star-container">
-      <% @court.reviews.each do |review| %>
-        <%= render "reviews/review", review: review %>
-      <% end %>
+      <%= render "reviews/review_accordion", court: @court %>
     </div>
-    <div class="container rating">
-      <%# <a href="#"><div class="rating"></i>⭐️⭐️⭐️⭐️⭐️ See reviews </div></a> %>
-        <%= simple_form_for([@court, @court.reviews.build]) do |f| %>
-          <%#= f.input :rating, collection: [1,2,3,4,5] %>
-          <%= f.input :rating, collection: (1..5).to_a %>
-          <%= f.input :title %>
-          <%= f.input :content %>
-          <%= f.button :submit %>
-        <% end %>
+    <% if @court.lessons.any? %>
+    <div class="lessons">
+      <%= render "lessons/lessons_accordion", court: @court %>
     </div>
-    <div>
-
-    <a href="#"><div class="rating">⭐️⭐️⭐️⭐️⭐️ See reviews </div></a>
-    <div class="lessons"><%= link_to 'See all lessons', court_lessons_path(@court) %></div>
-  </div>
-
-  <div class="container_checkins">
-    <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
-  </div>
-  <div class="container checkin">
-    <% if @latest_checkin.nil? %>
-      <%= form_tag court_check_ins_path(@court), method: :post do %>
-      <div class="alignonsameline">
-        <div class="card">
-            <label for="from">Starting Time</p>
-            <%= time_field_tag :start_time, params[:start_time], class: "form-group", placeholder: "From" %>
-        </div>
-        <div class="card">
-          <label for="until">End Time</p>
-          <%= time_field_tag :end_time, params[:end_time], class: "form-group", placeholder: "Until" %>
-        </div>
-      </div>
-        <div class="search-button">
-          <%= submit_tag "Check-In", class: "btn-flat check-in" %>
-        </div>
-      <% end %>
-    <% else %>
-      <div class= "confirmation">You're checked in from <%= @latest_checkin.start_time.to_s(:time)%> until <%= @latest_checkin.end_time.to_s(:time)%></div>
     <% end %>
   </div>
-  <br>
+
+<%# Here comes the check-in on a court logic %>
+  <div class="container checkin">
+    <div class="container_checkins">
+      <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
+    </div>
+      <% if @latest_checkin.nil? %>
+        <%= form_tag court_check_ins_path(@court), method: :post do %>
+        <div class="alignonsameline">
+          <div class="card">
+              <label for="from">Starting Time</p>
+              <%= time_field_tag :start_time, params[:start_time], class: "form-group", placeholder: "From" %>
+          </div>
+          <div class="card">
+            <label for="until">End Time</p>
+            <%= time_field_tag :end_time, params[:end_time], class: "form-group", placeholder: "Until" %>
+          </div>
+        </div>
+          <div class="search-button">
+            <%= submit_tag "Check-In", class: "btn-flat check-in" %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class= "confirmation">You're checked in from <%= @latest_checkin.start_time.to_s(:time)%> until <%= @latest_checkin.end_time.to_s(:time)%></div>
+      <% end %>
+  </div>
+
+  <%# Here comes the general information on the court text. We could think about taking it out completely %>
+
   <div class="court_text">
     <h4>General information</h4>
     <p><%= @court.description %></p>
