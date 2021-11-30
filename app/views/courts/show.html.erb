@@ -10,7 +10,7 @@
     <h1><%= @court.address %></h1>
   </div>
 
-<%# Butttons or dropdown to get directions / to leave a review / to see all lessons for that court %>
+  <%# Butttons or dropdown to get directions / to leave a review / to see all lessons for that court %>
 
   <div class="container content">
     <div class="directions">
@@ -26,7 +26,7 @@
     <% end %>
   </div>
 
-<%# Here comes the check-in on a court logic %>
+  <%# Here comes the check-in on a court logic %>
   <div class="container checkin">
     <div class="container_checkins">
       <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
@@ -59,4 +59,5 @@
     <p><%= @court.description %></p>
     <p>Munich has a range of different courts across the city. Its players are generally from all around the world. The location around <%= "#{@court.address}" %> also offers great chillout areas and bars to relax afterwards.</p>
   </div>
+
 </div>
