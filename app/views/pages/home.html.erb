@@ -3,7 +3,7 @@
   <div class="banner-container">
     <div class="banner-text">
       <h2>Looking for an outdoor activity?</h2>
-      <p>Find all the courts in your neighborhood</p>
+      <p>Find one with Sportious!</p>
     </div>
   </div>
   <!-- container storing search bar w/ different user inputs -->
@@ -20,20 +20,23 @@
               data: { geocoder_target: "address" }
             %>
           </div>
-          <p>Which sports are you interested in?</p>
           <div class="card-index">
+            <p>Which sports are you interested in?</p>
             <%= check_box_tag "volleyball", true %>
+            <%= image_tag "beach_volleyball_grey.png", class: "homepage-icon"%>
             <%= label_tag 'volleyball', 'Beach Volleyball' %>
           </div>
           <div class="card-index">
             <%= check_box_tag "basketball", true %>
+            <%= image_tag "basketball_grey.png", class: "homepage-icon"%>
             <%= label_tag 'basketball', 'Basketball' %>
           </div>
           <div class="card-index">
             <%= check_box_tag "ping_pong", true %>
+            <%= image_tag "ping_pong_grey.png", class: "homepage-icon"%>
             <%= label_tag 'ping pong', 'Ping pong' %>
           </div>
-          <%= submit_tag "Find your spots!", class: "btn btn-flat" %>
+          <%= submit_tag "Find your court!", class: "btn btn-flat" %>
         <% end %>
       </div>
     </div>
