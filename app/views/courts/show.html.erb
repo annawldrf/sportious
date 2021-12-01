@@ -9,13 +9,16 @@
         <% end %>
       <% end %>
     <% end %>
-    <h1><%= @court.address %></h1>
+    <div>
+      <h1><%= @court.address %></h1>
+      <%= render "reviews/star_rating", rating: @court.stars %>
+    </div>
   </div>
 
-<%# Butttons or dropdown to get directions / to leave a review / to see all lessons for that court %>
+  <%# Butttons or dropdown to get directions / to leave a review / to see all lessons for that court %>
 
-  <div class="container content">
-    <div class="directions">
+  <div class="container checkin show-content">
+    <div class="directions titlebox">
       <%= link_to '🗺 Get directions', "https://www.google.com/maps/place/#{@court.address}" %>
     </div>
     <div class="container rating star-container">
@@ -28,9 +31,9 @@
     <% end %>
   </div>
 
-<%# Here comes the check-in on a court logic %>
-  <div class="container checkin">
-    <div class="container_checkins">
+  <%# Here comes the check-in on a court logic %>
+  <div class="container checkin w-100">
+    <div class="container_checkins titlebox">
       <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
     </div>
       <% if @latest_checkin.nil? %>
@@ -61,4 +64,5 @@
     <p><%= @court.description %></p>
     <p>Munich has a range of different courts across the city. Its players are generally from all around the world. The location around <%= "#{@court.address}" %> also offers great chillout areas and bars to relax afterwards.</p>
   </div>
+
 </div>
