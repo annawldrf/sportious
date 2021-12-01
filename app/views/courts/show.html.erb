@@ -56,7 +56,7 @@
         <div class= "confirmation">You're checked in from <%= @latest_checkin.start_time.to_s(:time)%> until <%= @latest_checkin.end_time.to_s(:time)%></div>
       <% end %>
     <div class="container_checkins titlebox">
-      <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
+      <p class="players">Already <%= pluralize(@court.current_check_ins.count, "player") %>  checked in.</p>
     </div>
   </div>
 
