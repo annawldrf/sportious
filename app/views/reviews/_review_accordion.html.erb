@@ -17,7 +17,7 @@
               <%= f.input :rating, label: 'Your rating', class: 'rating-title', collection: (1..5).to_a%>
               <%= f.input :title, label: 'Add a title' %>
               <%= f.input :content %>
-              <button class="btn-flat reviewformbtn"><%= f.button :submit%></button>
+              <button class="btn-flat reviewformbtn"><%= f.button :submit, value: 'Add your review'%></button>
             <% end %>
           </div>
         </div>

@@ -13,6 +13,12 @@ Court.destroy_all
 CourtType.destroy_all
 User.destroy_all
 
+# All courts - might not work
+courts = []
+courts << basketball_courts
+courts << beach_volleyball_courts
+courts << pingpong_courts
+
 users = []
 user_admin = User.new(
   username: "marcel",
@@ -77,7 +83,7 @@ end
 # creating lessons for basketball courts
 puts "starting basketlessons"
 basketball_titles = ["Basketball Passing Skills", "Hooping like a Pro", "Defense Training", "Athletic Training - Basketball"]
-basketball_desc = ["I was training basketball for over 10 years. I want to teach and show some tricks how to optimize your passing skills, as its elementary for your success", "We want to traing on your general physics such as jumping or speed.", "Lets improve together your basketball basics. I can show you how to shoot hoops easily, how to defense and attack."]
+basketball_desc = ["I was training basketball for over 10 years. I want to teach and show some tricks how to optimize your passing skills, as its elementary for your success", "We want to training on your general physics such as jumping or speed.", "Lets improve together your basketball basics. I can show you how to shoot hoops easily, how to defense and attack."]
 basketball_courts.each do |court|
   lesson1 = Lesson.new(
     title: basketball_titles.sample,
@@ -195,3 +201,68 @@ pingpong_courts.each do |table|
 end
 
 puts "Finished courts"
+
+puts "starting reviews"
+
+review1 = Review.new(
+  title: "Great Court",
+  content: "Really good spot. Great surrounding. ",
+  rating: "4",
+  user_id: users.sample,
+  court_id: courts.sample
+)
+review1.save!
+
+review2 = Review.new(
+  title: "Cool People",
+  content: "I met so nice people there - big fun!",
+  rating: "5",
+  user_id: users.sample,
+  court_id: courts.sample
+)
+review2.save!
+
+review3 = Review.new(
+  title: "Not too good condition",
+  content: "The court itself was in not as good shape as expected.",
+  rating: "2",
+  user_id: users.sample,
+  court_id: courts.sample
+)
+review3.save!
+
+review4 = Review.new(
+  title: "Too many kids",
+  content: "Couldn't really play for there were so many children.",
+  rating: "2",
+  user_id: users.sample,
+  court_id: courts.sample
+)
+review4.save!
+
+review5 = Review.new(
+  title: "Top!",
+  content: "So much fun - great court",
+  rating: "5",
+  user_id: users.sample,
+  court_id: courts.sample
+)
+review5.save!
+
+review6 = Review.new(
+  title: "OK",
+  content: "no lightning, bad ground",
+  rating: "2",
+  user_id: users.sample,
+  court_id: courts.sample
+)
+review6.save!
+
+review7 = Review.new(
+  title: "Cool lesson",
+  content: "Came for a training here, was a great success.",
+  rating: "5",
+  user_id: users.sample,
+  court_id: courts.sample
+)
+review7.save!
