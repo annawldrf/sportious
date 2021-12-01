@@ -1,6 +1,6 @@
-  <p>Court type: <%= court.court_type.name.capitalize %></p>
-  <p>Address: <%= court.address %></p>
-    <%= link_to court_path(court) do %>
+<h1><i class="fas fa-map-marker-alt"></i> <%= court.address %></h1>
+<p><%= court.court_type.name.capitalize %> court</p>
+<%= link_to court_path(court) do %>
   <div class="card">
     <% if court.photo.attached? %>
       <%= cl_image_tag court.photo.key, crop: :fill, class: "popup-image" %>
@@ -8,7 +8,7 @@
       <% asset_path('/generic_image.jpeg') %>
     <% end %>
   </div>
-  <br>
+  <p class="players-info">There are <%= court.current_check_ins.count%> players checked in.</p>
 <% end %>
 
 <%#= link_to "Click me", court_path(court) %>
