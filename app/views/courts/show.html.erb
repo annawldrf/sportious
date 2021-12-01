@@ -7,16 +7,16 @@
         <i class="far fa-heart"></i>
       <% end %>
     <% end %>
-    <h1><%= @court.address %></h1>
+    <div>
+      <h1><%= @court.address %></h1>
+      <%= render "reviews/star_rating", rating: @court.stars %>
+    </div>
   </div>
 
   <%# Butttons or dropdown to get directions / to leave a review / to see all lessons for that court %>
 
   <div class="container checkin show-content">
-    <div class="average-rating">
-      <%= render "reviews/star_rating", rating: @court.stars %>
-    </div>
-    <div class="directions">
+    <div class="directions titlebox">
       <%= link_to '🗺 Get directions', "https://www.google.com/maps/place/#{@court.address}" %>
     </div>
     <div class="container rating star-container">
@@ -30,8 +30,8 @@
   </div>
 
   <%# Here comes the check-in on a court logic %>
-  <div class="container checkin">
-    <div class="container_checkins">
+  <div class="container checkin w-100">
+    <div class="container_checkins titlebox">
       <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
     </div>
       <% if @latest_checkin.nil? %>
