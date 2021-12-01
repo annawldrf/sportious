@@ -10,7 +10,7 @@
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 6px;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
@@ -32,11 +32,10 @@
 .directions, .rating, .lessons, .average-rating {
   margin: 4px;
   padding: 5px;
-  border-radius: 12px;
+  border-radius: 6px;
   background-color: $light-black;
   color: $white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
   width: 100%;
 }
@@ -44,22 +43,20 @@
 .container_checkins {
   margin: 4px;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: 6px;
   background-color: $light-black;
   color: $white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
 .checkin {
   margin: 4px;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: 6px;
   // background-color: $light-black !important;
   color: $white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px !important;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
   width: auto;
 }
@@ -67,11 +64,10 @@
 .court_text {
   margin: 4px;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: 6px;
   background-color: $light-black !important;
   color: $white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px !important;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
   width: auto;
 }
@@ -88,11 +84,10 @@ a {
 .confirmation {
   margin: 4px;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: 6px;
   background-color: $sportious;
   color: $black;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
@@ -118,4 +113,10 @@ a {
 
 .titlebox {
   height: 48px;
+}
+
+.topshowpage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -1,32 +1,33 @@
 // card style for detail on lesson
 
 .card-lesson {
-  color: white;
+  color: $white;
   overflow: hidden;
   height: 120px;
   background: $grey;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 6px;
+  width: 100%;
 }
 
 .card-lesson h2 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-lesson p {
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.2;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .card-lesson .card-lesson-infos {
-  padding: 16px;
+  padding: 6px;
 }
 
 .details {
@@ -34,6 +35,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+
 }
 
 // any other styling for lessons

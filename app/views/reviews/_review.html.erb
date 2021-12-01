@@ -3,5 +3,5 @@
     <h2><%= review.title%><%= render "reviews/star_rating", rating: review.rating %></h2>
     <h6><%= review.content %></h6>
   </div>
-  <p>(Added by: <%= review.user.username %>)</p>
+  <p><i class="fas fa-user-friends"></i><%= review.user.username.capitalize %></p>
 </div>
