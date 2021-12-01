@@ -1,0 +1,44 @@
+.accordion-button {
+  color: $white;
+  background-color:$light-black;
+  border-radius: 12px;
+  border-style: none;
+  height: 40px;
+  border: none;
+}
+
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: "";
+  background-image: url("https://res.cloudinary.com/dhr7binhu/image/upload/v1638355254/sportious/arrow_down_fnawm5.png");
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("https://res.cloudinary.com/dhr7binhu/image/upload/v1638355254/sportious/arrow_down_fnawm5.png");
+  transform: rotate(-180deg);
+  color: $white;
+}
+
+
+.accordion-button::after {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: auto;
+    content: "";
+    background-image: url(https://res.cloudinary.com/dhr7binhu/image/upload/v1638355254/sportious/arrow_down_fnawm5.png);
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.accordion-item {
+  border: none;
+  background-color: transparent;
+}

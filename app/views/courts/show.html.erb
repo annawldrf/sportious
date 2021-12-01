@@ -12,7 +12,10 @@
 
   <%# Butttons or dropdown to get directions / to leave a review / to see all lessons for that court %>
 
-  <div class="container content">
+  <div class="container checkin show-content">
+    <div class="average-rating">
+      <%= render "reviews/star_rating", rating: @court.stars %>
+    </div>
     <div class="directions">
       <%= link_to '🗺 Get directions', "https://www.google.com/maps/place/#{@court.address}" %>
     </div>
