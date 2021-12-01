@@ -4,12 +4,13 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+
   .rails-default-error-page {
-    background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
+    background-color: black;
   }
 
   .rails-default-error-page div.dialog {
@@ -19,21 +20,15 @@
   }
 
   .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
+
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
 
   .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
+    font-size: 80%;
+    color: white;
     line-height: 1.5em;
   }
 
@@ -51,17 +46,39 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .container {
+  padding-top: 5px;
+  padding-bottom: 1px;
+  border-radius: 12px;
+  background-color: #414040;
+  color: $white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  width: 100%;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
   <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+    <div class="container">
+      <h1>We're sorry, but no one seems to play here today</h1>
+      <img src="./images/lost_place.jpg" width="250px" height= "175px">
+      <br>
+      <a class="btn btn-flat" href="/">Back Home</a>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
