@@ -33,6 +33,7 @@
 
   <%# Here comes the check-in on a court logic %>
   <div class="container checkin w-100">
+    <h6>Let others know you'll be here & Check-In!</h6>
     <div class="container_checkins titlebox">
       <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
     </div>
@@ -49,7 +50,7 @@
           </div>
         </div>
           <div class="search-button">
-            <%= submit_tag "Check-In", class: "btn-flat check-in" %>
+            <%= submit_tag "Check in", class: "btn-flat check-in" %>
           </div>
         <% end %>
       <% else %>
