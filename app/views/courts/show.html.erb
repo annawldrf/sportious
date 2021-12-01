@@ -9,9 +9,9 @@
         <% end %>
       <% end %>
     <% end %>
-    <div>
+    <div class="topshowpage">
       <h1><%= @court.address %></h1>
-      <%= render "reviews/star_rating", rating: @court.stars %>
+      <div><%= render "reviews/star_rating", rating: @court.stars %></div>
     </div>
   </div>
 

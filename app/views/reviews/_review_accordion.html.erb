@@ -1,22 +1,25 @@
 <div class="accordion" id="accordionReview">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <button class="accordion-button collapsed my-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
         Reviews
       </button>
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionReview">
-      <div class="accordion-body">
+      <div class="accordion-body my-accordion-body">
         <% court.reviews.each do |review| %>
           <%= render "reviews/review", review: review %>
         <% end %>
-        <div class="container rating">
+        <div class="review-form">
           <%= simple_form_for([@court, @court.reviews.build]) do |f| %>
-            <%= f.input :rating, collection: (1..5).to_a %>
-            <%= f.input :title %>
-            <%= f.input :content %>
-            <%= f.button :submit %>
-          <% end %>
+          <h2>Add your personal review </h2>
+          <div class="input-fields-review">
+            <%= f.input :rating, label: 'Your rating', collection: (1..5).to_a%>
+              <%= f.input :title, label: 'Add a title' %>
+              <%= f.input :content %>
+              <button class="btn-flat reviewformbtn"><%= f.button :submit%></button>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
