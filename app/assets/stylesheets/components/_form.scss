@@ -1,9 +1,15 @@
 .court-new-label {
   color: white;
+  margin: 3px 18px !important;
+  text-align: left !important;
 }
 
 .court-new-input {
   background-color: lightgray;
   width: 90%;
   margin: 0 auto;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  background-color: lightgray;
 }

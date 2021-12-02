@@ -21,6 +21,10 @@ margin: 10px 0;
 font-size: 12px;
 }
 
+.mapboxgl-popup-content a {
+outline: none !important;
+}
+
 .popup-image {
   max-height: 250px;
   max-width: 250px;
