@@ -144,6 +144,12 @@ a {
     margin-top: 200px;
   }
 
-  .timeinput {
-    padding: 2px;
+
+// Zeitfelder
+
+.form-group {
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0.8px 0px 0px $light-black;
   }

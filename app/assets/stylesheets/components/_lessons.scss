@@ -41,3 +41,14 @@
 }
 
 // any other styling for lessons
+.addnewlesson {
+  width: 120px;
+  height: 40px;
+  float: right;
+  margin-right: 0px;
+  margin-top: 2px;
+  text-align: center;
+  .addnewlesson a {
+    color: $black !important;
+  }
+}
