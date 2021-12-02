@@ -39,7 +39,7 @@
       <% if @latest_checkin.nil? %>
         <%= form_tag court_check_ins_path(@court), method: :post do %>
         <div class="alignonsameline">
-          <div class="card">
+          <div class="card time-label">
               <label for="from">Starting Time</p>
               <%= time_field_tag :start_time, params[:start_time], class: "form-group", placeholder: "From" %>
           </div>
@@ -56,7 +56,7 @@
         <div class= "confirmation">You're checked in from <%= @latest_checkin.start_time.to_s(:time)%> until <%= @latest_checkin.end_time.to_s(:time)%></div>
       <% end %>
     <div class="container_checkins titlebox">
-      <p class="players">Already <%= pluralize(@court.current_check_ins.count, "player") %>  checked in.</p>
+      <p class="players"><%= pluralize(@court.current_check_ins.count, "player") %> checked in at the moment.</p>
     </div>
   </div>
 

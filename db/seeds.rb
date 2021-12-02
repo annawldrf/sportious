@@ -13,12 +13,6 @@ Court.destroy_all
 CourtType.destroy_all
 User.destroy_all
 
-# All courts - might not work
-courts = []
-courts << basketball_courts
-courts << beach_volleyball_courts
-courts << pingpong_courts
-
 users = []
 user_admin = User.new(
   username: "marcel",
@@ -202,67 +196,74 @@ end
 
 puts "Finished courts"
 
-puts "starting reviews"
+# puts "starting reviews"
+# all_courts = []
+# all_courts << basketball_courts
+# all_courts << beach_volleyball_courts
+# all_courts << pingpong_courts
 
-review1 = Review.new(
-  title: "Great Court",
-  content: "Really good spot. Great surrounding. ",
-  rating: "4",
-  user_id: users.sample,
-  court_id: courts.sample
-)
-review1.save!
 
-review2 = Review.new(
-  title: "Cool People",
-  content: "I met so nice people there - big fun!",
-  rating: "5",
-  user_id: users.sample,
-  court_id: courts.sample
-)
-review2.save!
 
-review3 = Review.new(
-  title: "Not too good condition",
-  content: "The court itself was in not as good shape as expected.",
-  rating: "2",
-  user_id: users.sample,
-  court_id: courts.sample
-)
-review3.save!
+# review1 = Review.new(
+#   title: "Great Court",
+#   content: "Really good spot. Great surrounding. ",
+#   rating: "4",
+#   user: users.sample,
+#   court: all_courts.sample
+# )
+# review1.save!
 
-review4 = Review.new(
-  title: "Too many kids",
-  content: "Couldn't really play for there were so many children.",
-  rating: "2",
-  user_id: users.sample,
-  court_id: courts.sample
-)
-review4.save!
+# review2 = Review.new(
+#   title: "Cool People",
+#   content: "I met so nice people there - big fun!",
+#   rating: "5",
+#   user: users.sample,
+#   court: all_courts.sample
+# )
+# review2.save!
 
-review5 = Review.new(
-  title: "Top!",
-  content: "So much fun - great court",
-  rating: "5",
-  user_id: users.sample,
-  court_id: courts.sample
-)
-review5.save!
+# review3 = Review.new(
+#   title: "Not too good condition",
+#   content: "The court itself was in not as good shape as expected.",
+#   rating: "2",
+#   user: users.sample,
+#   court: all_courts.sample
+# )
+# review3.save!
 
-review6 = Review.new(
-  title: "OK",
-  content: "no lightning, bad ground",
-  rating: "2",
-  user_id: users.sample,
-  court_id: courts.sample
-)
-review6.save!
+# review4 = Review.new(
+#   title: "Too many kids",
+#   content: "Couldn't really play for there were so many children.",
+#   rating: "2",
+#   user: users.sample,
+#   court: all_courts.sample
+# )
+# review4.save!
 
-review7 = Review.new(
-  title: "Cool lesson",
-  content: "Came for a training here, was a great success.",
-  rating: "5",
-  user_id: users.sample,
-  court_id: courts.sample
-)
-review7.save!
+# review5 = Review.new(
+#   title: "Top!",
+#   content: "So much fun - great court",
+#   rating: "5",
+#   user: users.sample,
+#   court: all_courts.sample
+# )
+# review5.save!
+
+# review6 = Review.new(
+#   title: "OK",
+#   content: "no lightning, bad ground",
+#   rating: "2",
+#   user: users.sample,
+#   court: all_courts.sample
+# )
+# review6.save!
+
+# review7 = Review.new(
+#   title: "Cool lesson",
+#   content: "Came for a training here, was a great success.",
+#   rating: "5",
+#   user: users.sample,
+#   court: all_courts.sample
+# )
+# review7.save!
+# puts "finished reviews"
