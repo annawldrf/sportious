@@ -137,7 +137,7 @@ beach_volleyball_courts.each do |court|
   lesson2 = Lesson.new(
     title: volleyball_titles.sample,
     description: volleyball_desc.sample,
-    start_time:  DateTime.new(2021, 12, 3, 16, 45),
+    start_time: DateTime.new(2021, 12, 3, 16, 45),
     end_time: DateTime.new(2021, 12, 31, 17, 45),
     capacity: [4, 2, 6].sample,
     price: [0, 3, 5, 5, 3.5].sample,

@@ -119,7 +119,14 @@ a {
 }
 
 .titlebox {
+  font-family: $headers-font;
   height: 48px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-indent: 20px;
+
 }
 
 .topshowpage {
@@ -134,4 +141,8 @@ a {
     // display: inline;
     float: right;
     margin-top: 200px;
+  }
+
+  .timeinput {
+    padding: 2px;
   }

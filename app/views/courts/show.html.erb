@@ -41,11 +41,11 @@
         <div class="alignonsameline">
           <div class="card time-label">
               <label for="from">Starting Time</p>
-              <%= time_field_tag :start_time, params[:start_time], class: "form-group", placeholder: "From" %>
+              <div class="timeinput"><%= time_field_tag :start_time, params[:start_time], class: "form-group", placeholder: "From" %></div>
           </div>
           <div class="card">
             <label for="until">End Time</p>
-            <%= time_field_tag :end_time, params[:end_time], class: "form-group", placeholder: "Until" %>
+            <div class="timeinput"><%= time_field_tag :end_time, params[:end_time], class: "form-group", placeholder: "Until" %></div>
           </div>
         </div>
           <div class="search-button">
