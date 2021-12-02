@@ -9,7 +9,7 @@
           <div> <%= link_to '✚ lesson', new_court_lesson_path(@court)%></div>
           <div class="lessons-list">
             <% @court.lessons.each do |lesson| %>
-            <%= render "lessons/lesson", court: court %>
+              <%= render "lessons/lesson", lesson: lesson %>
             <% end %>
           </div>
       </div>

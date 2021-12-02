@@ -3,13 +3,14 @@
 .card-lesson {
   color: $white;
   overflow: hidden;
-  height: 120px;
   background: $grey;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 6px;
   width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
 }
 
 .card-lesson h2 {
@@ -28,6 +29,7 @@
 
 .card-lesson .card-lesson-infos {
   padding: 6px;
+  width: 100%;
 }
 
 .details {

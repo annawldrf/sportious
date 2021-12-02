@@ -9,6 +9,7 @@
 require 'faker'
 require 'uri'
 
+Review.destroy_all
 Court.destroy_all
 CourtType.destroy_all
 User.destroy_all
@@ -22,6 +23,15 @@ user_admin = User.new(
 )
 user_admin.save!
 users << user_admin
+
+anna = User.new(
+  username: "anna",
+  email: "anna@waldorf.de",
+  password: "123456",
+  admin: true
+)
+anna.save!
+users << anna
 
 10.times do
   user = User.new(
@@ -196,31 +206,25 @@ end
 
 puts "Finished courts"
 
-# puts "starting reviews"
-# all_courts = []
-# all_courts << basketball_courts
-# all_courts << beach_volleyball_courts
-# all_courts << pingpong_courts
+puts "starting reviews"
 
+review1 = Review.new(
+  title: "Great Court",
+  content: "Really good spot. Great surroundings. But not enough lighting.",
+  rating: 3,
+  user: users[2],
+  court: basketball_courts[3]
+)
+review1.save!
 
-
-# review1 = Review.new(
-#   title: "Great Court",
-#   content: "Really good spot. Great surrounding. ",
-#   rating: "4",
-#   user: users.sample,
-#   court: all_courts.sample
-# )
-# review1.save!
-
-# review2 = Review.new(
-#   title: "Cool People",
-#   content: "I met so nice people there - big fun!",
-#   rating: "5",
-#   user: users.sample,
-#   court: all_courts.sample
-# )
-# review2.save!
+review2 = Review.new(
+  title: "Cool People",
+  content: "I met such nice people there - it was lots of fun!",
+  rating: 4,
+  user: users[3],
+  court: basketball_courts[3]
+)
+review2.save!
 
 # review3 = Review.new(
 #   title: "Not too good condition",
@@ -266,4 +270,4 @@ puts "Finished courts"
 #   court: all_courts.sample
 # )
 # review7.save!
-# puts "finished reviews"
+puts "finished reviews"
