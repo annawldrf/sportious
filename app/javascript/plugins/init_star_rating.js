@@ -1,7 +1,14 @@
 import "jquery-bar-rating";
 import $ from 'jquery';
 
+const clearStarRatings = () => {
+  document.querySelectorAll(".br-widget").forEach((element) => {
+    element.remove()
+  });
+};
+
 const initStarRating = () => {
+  clearStarRatings()
   $('#review_rating').barrating({
     theme: 'css-stars'
   });
