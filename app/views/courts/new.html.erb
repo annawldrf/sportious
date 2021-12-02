@@ -1,6 +1,6 @@
 <div class="container court" style="height: 30vh; ">
   <div class="top-part" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('homepage.jpg')%>);">
-    <h1>Add a New Court:</h1>
+    <h1>Share your court with others</h1>
   </div>
 </div>
 <div class="container" style="height: 70vh; ">
@@ -15,7 +15,7 @@
       <%= f.input :photo, as: :file, label_html: { class: 'court-new-label' }, input_html: { class: 'court-new-input' } %>
       <div class="d-flex justify-content-between pb-3">
         <%= link_to 'Back', courts_path, class: "btn btn-secondary mx-3" %>
-        <%= f.button :submit, class: "btn btn-new-court mx-3" %>
+        <%= f.button :submit, value: 'Share your court', class: "btn btn-new-court mx-3" %>
       </div>
       <% end  %>
 </div>
