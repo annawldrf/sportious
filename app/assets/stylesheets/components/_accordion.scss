@@ -76,3 +76,35 @@
   align-items: center;
   display: flex;
 }
+
+.review_rating label {
+  font-size: 14px;
+  text-align: left;
+  margin-left: 0px;
+  // width: 100%;
+}
+
+.review_title label {
+  padding-top: 12px;
+  font-size: 14px;
+  text-align: left;
+  margin-left: 0px;
+  width: 100%;
+}
+
+.review_content label {
+  font-size: 14px;
+  text-align: left;
+  margin-left: 0px;
+  width: 100%;
+}
+
+.new_review h2 {
+  text-align: center;
+  font-size: 16px;
+}
+
+.reviewformbtn {
+  margin: 0 auto !important;
+  align-items: center;
+}

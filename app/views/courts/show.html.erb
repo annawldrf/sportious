@@ -1,17 +1,19 @@
 <div class="container court" style="width: 100%; height: 100vh;">
   <div class="top-part" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @court.photo.attached? ? cl_image_path(@court.photo.key) : asset_path('/generic_image.jpeg')%>);">
-    <% if current_user.present? %>
-      <%= link_to favorite_path(court_id: @court) do %>
-        <% if current_user.favorited?(@court) %>
-          <i class="fas fa-heart"></i>
-        <% else %>
-          <i class="far fa-heart"></i>
-        <% end %>
-      <% end %>
-    <% end %>
     <div class="topshowpage">
-      <h1><%= @court.address %></h1>
-      <div><%= render "reviews/star_rating", rating: @court.stars %></div>
+      <div class="hearticon">
+        <% if current_user.present? %>
+          <%= link_to favorite_path(court_id: @court) do %>
+            <% if current_user.favorited?(@court) %>
+              <i class="fas fa-heart"></i>
+            <% else %>
+              <i class="far fa-heart"></i>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+        <h1><%= @court.address %></h1>
+        <div><%= render "reviews/star_rating", rating: @court.stars %></div>
     </div>
   </div>
 
@@ -33,13 +35,11 @@
 
   <%# Here comes the check-in on a court logic %>
   <div class="container checkin w-100">
-    <div class="container_checkins titlebox">
-      <p class="players">There are <%= @court.current_check_ins.count%> players checked in.</p>
-    </div>
+    <h6 style="margin-left: 10px">Let others know you'll be here & Check-In!</h6>
       <% if @latest_checkin.nil? %>
         <%= form_tag court_check_ins_path(@court), method: :post do %>
         <div class="alignonsameline">
-          <div class="card">
+          <div class="card time-label">
               <label for="from">Starting Time</p>
               <%= time_field_tag :start_time, params[:start_time], class: "form-group", placeholder: "From" %>
           </div>
@@ -49,12 +49,15 @@
           </div>
         </div>
           <div class="search-button">
-            <%= submit_tag "Check-In", class: "btn-flat check-in" %>
+            <%= submit_tag "Check in", class: "btn-flat check-in" %>
           </div>
         <% end %>
       <% else %>
         <div class= "confirmation">You're checked in from <%= @latest_checkin.start_time.to_s(:time)%> until <%= @latest_checkin.end_time.to_s(:time)%></div>
       <% end %>
+    <div class="container_checkins titlebox">
+      <p class="players"><%= pluralize(@court.current_check_ins.count, "player") %> checked in at the moment.</p>
+    </div>
   </div>
 
   <%# Here comes the general information on the court text. We could think about taking it out completely %>
