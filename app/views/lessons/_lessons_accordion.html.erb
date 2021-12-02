@@ -6,11 +6,11 @@
     </h2>
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionLessons">
         <div class="accordion-body my-accordion-body">
-          <div class="btn-flat addnewlesson"> <%= link_to '✚ Add a lesson', new_court_lesson_path(@court)%></div>
           <div class="lessons-list">
             <% @court.lessons.each do |lesson| %>
               <%= render "lessons/lesson", lesson: lesson %>
             <% end %>
+            <div class="btn-flat addnewlesson"> <%= link_to '✚ Add a lesson', new_court_lesson_path(@court)%></div>
           </div>
       </div>
   </div>

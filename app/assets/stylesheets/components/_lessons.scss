@@ -44,11 +44,12 @@
 .addnewlesson {
   width: 120px;
   height: 40px;
-  float: right;
   margin-right: 0px;
   margin-top: 2px;
   text-align: center;
-  .addnewlesson a {
-    color: $black !important;
+  a {
+    color: #212529 !important;
+    font-weight: 400;
+    text-shadow: none;
   }
 }
