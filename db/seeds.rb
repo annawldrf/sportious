@@ -92,8 +92,8 @@ basketball_courts.each do |court|
   lesson1 = Lesson.new(
     title: basketball_titles.sample,
     description: basketball_desc.sample,
-    start_time:  DateTime.new(2021, 12, 3, 16, 45),
-    end_time: DateTime.new(2021, 12, 31, 17, 45),
+    start_time:  DateTime.new(2021, 12, 3, 19, 00),
+    end_time: DateTime.new(2021, 12, 31, 20, 00),
     capacity: [4, 2, 6].sample,
     price: [4.5, 2, 6, 0].sample,
     court: court,
@@ -210,7 +210,7 @@ puts "starting reviews"
 
 review1 = Review.new(
   title: "Great Court",
-  content: "Really good spot. Great surroundings. But not enough lighting.",
+  content: "Really good spot. Great surroundings. Even nice lighting.",
   rating: 3,
   user: users[2],
   court: basketball_courts[3]
