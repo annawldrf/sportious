@@ -26,11 +26,9 @@
     <div class="container rating star-container">
       <%= render "reviews/review_accordion", court: @court %>
     </div>
-    <% if @court.lessons.any? %>
     <div class="lessons">
       <%= render "lessons/lessons_accordion", court: @court %>
     </div>
-    <% end %>
   </div>
 
   <%# Here comes the check-in on a court logic %>
@@ -63,7 +61,7 @@
   <%# Here comes the general information on the court text. We could think about taking it out completely %>
 
   <div class="court_text">
-    <h4>General information</h4>
+    <h4>About the Court</h4>
     <p><%= @court.description %></p>
     <p>Munich has a range of different courts across the city. Its players are generally from all around the world. The location around <%= "#{@court.address}" %> also offers great chillout areas and bars to relax afterwards.</p>
   </div>
